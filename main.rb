@@ -38,17 +38,28 @@ end
 
 def game_setup
 	def setup_i
-		puts "\n// How many players will be participating? Please enter a choice of 1 through 25."
+		puts "\n// How many human players will be participating? Please enter a choice of 1 through 25."
 		player_count = gets.chomp.to_i
 		if player_count > 25 || player_count < 1
 			puts "\n!! Invalid Input... Please enter a choice of 1 through 25."
 			setup_i
 		else
-			puts "\n// #{player_count} player game. Roger that."
+			puts "\n// #{player_count} player(s). Roger that."
 			setup_ii
 		end
 	end
 	def setup_ii
+		puts "\n// How many NPCs will be participating? Please enter a choice of 1 through 25."
+		npc_count = gets.chomp.to_i
+		if npc_count > 25 || npc_count < 1 || (npc_count + player_count > 25)
+			puts "\n!! Invalid Input... Please enter a choice of 1 through 25. Also, you cannot have more than 25 total 		participants including human players and NPCs."
+			setup_i
+		else
+			puts "\n// #{npc_count} NPC(s). Roger that."
+			setup_iii
+		end
+	end
+	def setup_iii
 		puts "\n// What game mode would you like to play?"
 		puts "\n// (1)Standard Game, (2)Enable \"Super Ace\" Mode, (3)Enable \"Card Again\" Mode, or (4)More Info?"
 		gameplay_choice = gets.chomp
@@ -70,7 +81,7 @@ def game_setup
 			gameplay_mechs_info
 		else
 			puts "\n!! Invalid Input... Please enter a choice of 1, 2, 3, or 4."
-			setup_ii
+			setup_iii
 		end
 	end
 	puts "\n// GAME SETUP"
@@ -194,6 +205,15 @@ def dealer
 
 end
 
+
+
+
+
+def participant_manager
+	def seat_participants
+		npcs_needed = player_count
+	end	
+end
 
 
 
