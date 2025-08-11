@@ -39,23 +39,24 @@ end
 def game_setup
 	def setup_i
 		puts "\n// How many human players will be participating? Please enter a choice of 1 through 25."
-		player_count = gets.chomp.to_i
-		if player_count > 25 || player_count < 1
+		@player_count = gets.chomp.to_i
+		if @player_count > 25 || @player_count < 1
 			puts "\n!! Invalid Input... Please enter a choice of 1 through 25."
 			setup_i
 		else
-			puts "\n// #{player_count} player(s). Roger that."
+			puts "\n// #{@player_count} player(s). Roger that."
 			setup_ii
 		end
 	end
 	def setup_ii
 		puts "\n// How many NPCs will be participating? Please enter a choice of 1 through 25."
-		npc_count = gets.chomp.to_i
-		if npc_count > 25 || npc_count < 1 || (npc_count + player_count > 25)
-			puts "\n!! Invalid Input... Please enter a choice of 1 through 25. Also, you cannot have more than 25 total 		participants including human players and NPCs."
-			setup_i
+		@npc_count = gets.chomp.to_i
+		if @npc_count > 25 or @npc_count < 1 or (@npc_count + @player_count > 25)
+			puts "\n!! Invalid Input... Please enter a choice of 1 through 25. Also, you cannot have more than 25 total participants including human players and NPCs."
+			setup_ii
 		else
-			puts "\n// #{npc_count} NPC(s). Roger that."
+			puts "\n// #{@npc_count} NPC(s). Roger that."
+			@participant_count = (@npc_count + @player_count)
 			setup_iii
 		end
 	end
@@ -202,19 +203,18 @@ def dealer
 	shuffled_game_deck = game_deck.shuffle
 	drawn_card = shuffled_game_deck.pop
 	puts drawn_card #for temp test
-
 end
 
 
 
 
-
+=begin
 def participant_manager
 	def seat_participants
-		npcs_needed = player_count
+		
 	end	
 end
-
+=end
 
 
 
