@@ -182,7 +182,11 @@ def card_manager
 	fresh_deck = card_value.product(card_suit).map do |value, suit|
 		"#{value} of #{suit}"
 	end
+	grabbed_card = fresh_deck.pop
+	drawn_card = "You drew a " + grabbed_card
+	
 	puts fresh_deck.shuffle #temp test
+	puts drawn_card
 end
 
 
