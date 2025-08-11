@@ -49,19 +49,22 @@ def game_setup
 		end
 	end
 	def setup_ii
-		puts "\n// Would you like to enable any optional gameplay mechanics?"
+		puts "\n// What game mode would you like to play?"
 		puts "\n// (1)Standard Game, (2)Enable \"Super Ace\" Mode, (3)Enable \"Card Again\" Mode, or (4)More Info?"
 		gameplay_choice = gets.chomp
 		case gameplay_choice
 		when "1"
 			puts "\n// Standard Game. Solid Copy."
-			#standard_start_game
+			#@game_mode = standard
+			#start_game
 		when "2"
 			puts "\n// \"Super Ace\" Mode Enabled!"
-			#superace_start_game
+			#@game_mode = superace_mode
+			#start_game
 		when "3"
 			puts "\n// \"Card Again\" Mode Enabled!"
-			#cardagain_start_game
+			#@game_mode = cardagain_mode
+			#start_game
 		when "4"
 			puts "\n // More Information Loading..."
 			gameplay_mechs_info
@@ -156,41 +159,45 @@ end
 
 
 =begin
-def standard_start_game
+def npc
 end
 
 
 
 
 
-def superace_start_game
-end
-
-
-
-
-
-def cardagain_start_game
+def start_game
 end
 =end
+
+
 
 
 
 def card_manager
 	card_value = ["ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king"]
 	card_suit = ["spades", "hearts", "clubs", "diamonds"]
-	fresh_deck = card_value.product(card_suit).map do |value, suit|
+	@fresh_deck = card_value.product(card_suit).map do |value, suit|
 		"#{value} of #{suit}"
 	end
-	grabbed_card = fresh_deck.pop
-	drawn_card = "You drew a " + grabbed_card
-	
-	puts fresh_deck.shuffle #temp test
-	puts drawn_card
 end
 
 
 
 
+
+def dealer
+	game_deck = @fresh_deck
+	shuffled_game_deck = game_deck.shuffle
+	drawn_card = shuffled_game_deck.pop
+	puts drawn_card #for temp test
+
+end
+
+
+
+
+
 card_manager
+dealer
 open_program
