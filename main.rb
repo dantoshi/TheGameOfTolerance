@@ -78,29 +78,6 @@ end
 
 
 
-=begin
-def standard_start_game
-end
-
-
-
-
-
-def superace_start_game
-end
-
-
-
-
-
-def cardagain_start_game
-end
-=end
-
-
-
-
-
 def gameplay_mechs_info
 	gameplay_mechs_mods = "
 \n// GAMEPLAY MECHANICS MODIFICATIONS
@@ -178,4 +155,38 @@ end
 
 
 
+=begin
+def standard_start_game
+end
+
+
+
+
+
+def superace_start_game
+end
+
+
+
+
+
+def cardagain_start_game
+end
+=end
+
+
+
+def card_manager
+	card_value = ["ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king"]
+	card_suit = ["spades", "hearts", "clubs", "diamonds"]
+	fresh_deck = card_value.product(card_suit).map do |value, suit|
+		"#{value} of #{suit}"
+	end
+	puts fresh_deck #temp test
+end
+
+
+
+
+card_manager
 open_program
