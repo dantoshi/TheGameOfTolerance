@@ -55,3 +55,20 @@ work with Tolerance.
 These above rules are meant to be the “standard” and simplest form of play. Make modifications to game play mechanics at player discretion.
 
 Send feedback and view previous versions at npub140y9mz9u9cpm8y9597kdetpte5v5v62nvdzzvp78gfx2xf0x6kxqf5h56k via NOSTR.
+
+
+Game Play Modifications:
+
+“Super Ace”
+
+Every Ace card starts out worth one point, just as normal. However, if a player has been dealt an Ace card and they decide to roll with
+a Tolerance number of ten, and then they proceed to roll a ten… not only would they gain the ten points as normal, but the Ace card
+would upgrade to a fourteen point card. If the player instead rolled less than ten, they would lose ten points as normal and the Ace
+card would retain it’s normal value of one point.
+
+“Card Again”
+
+Play as normal, except each player should be dealt an additional card after each round of rolls.
+
+
+Send other game play modification ideas and feedback to npub140y9mz9u9cpm8y9597kdetpte5v5v62nvdzzvp78gfx2xf0x6kxqf5h56k via NOSTR.
